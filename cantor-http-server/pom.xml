@@ -21,7 +21,7 @@
         <jersey.version>4.0.2</jersey.version>
         <jetty.version>12.1.9</jetty.version>
         <groovy.version>3.0.8</groovy.version>
-        <freemarker.version>2.3.30</freemarker.version>
+        <freemarker.version>2.3.35</freemarker.version>
     </properties>
 
     <dependencies>
