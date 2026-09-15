@@ -44,7 +44,7 @@
         <mvn.plugins.resources.version>2.7</mvn.plugins.resources.version>
         <mvn.plugins.source.version>2.4</mvn.plugins.source.version>
         <mvn.plugins.release.version>2.5.3</mvn.plugins.release.version>
-        <mvn.plugins.gpg.version>1.6</mvn.plugins.gpg.version>
+        <mvn.plugins.gpg.version>3.2.8</mvn.plugins.gpg.version>
         <mvn.plugins.enforcer.version>3.0.0-M1</mvn.plugins.enforcer.version>
         <mvn.plugins.surefire.version>2.19.1</mvn.plugins.surefire.version>
         <mvn.plugins.failsafe.version>2.19.1</mvn.plugins.failsafe.version>
