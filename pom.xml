@@ -42,7 +42,7 @@
         <mvn.plugins.compiler.version>2.5.1</mvn.plugins.compiler.version>
         <mvn.plugins.javadoc.version>2.10.1</mvn.plugins.javadoc.version>
         <mvn.plugins.resources.version>2.7</mvn.plugins.resources.version>
-        <mvn.plugins.source.version>2.4</mvn.plugins.source.version>
+        <mvn.plugins.source.version>3.4.0</mvn.plugins.source.version>
         <mvn.plugins.release.version>2.5.3</mvn.plugins.release.version>
         <mvn.plugins.gpg.version>1.6</mvn.plugins.gpg.version>
         <mvn.plugins.enforcer.version>3.0.0-M1</mvn.plugins.enforcer.version>
