@@ -40,7 +40,7 @@
         <testng.version>7.5.1</testng.version>
 
         <mvn.plugins.compiler.version>2.5.1</mvn.plugins.compiler.version>
-        <mvn.plugins.javadoc.version>2.10.1</mvn.plugins.javadoc.version>
+        <mvn.plugins.javadoc.version>3.12.0</mvn.plugins.javadoc.version>
         <mvn.plugins.resources.version>2.7</mvn.plugins.resources.version>
         <mvn.plugins.source.version>2.4</mvn.plugins.source.version>
         <mvn.plugins.release.version>2.5.3</mvn.plugins.release.version>
