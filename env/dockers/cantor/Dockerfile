@@ -1,5 +1,5 @@
 #FROM centos:8
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:25-jre
 
 ARG version
 ARG pipeline_args
