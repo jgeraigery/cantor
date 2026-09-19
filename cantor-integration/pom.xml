@@ -62,7 +62,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>3.6.4</version>
                 <executions>
                     <execution>
                         <id>html-report</id>
@@ -76,7 +76,7 @@
                 harness can run via `java -jar` without a Maven build at runtime-->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.5.3</version>
+                <version>2.6</version>
                 <configuration>
                     <archive>
                         <manifest>

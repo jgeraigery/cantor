@@ -17,8 +17,8 @@
     <name>cantor-functions</name>
 
     <properties>
-        <groovy.version>3.0.9</groovy.version>
-        <freemarker.version>2.3.31</freemarker.version>
+        <groovy.version>3.0.25</groovy.version>
+        <freemarker.version>2.3.35</freemarker.version>
         <commons-io.version>2.6</commons-io.version>
     </properties>
 
