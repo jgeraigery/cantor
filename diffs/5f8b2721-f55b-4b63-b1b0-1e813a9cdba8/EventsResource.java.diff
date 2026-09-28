@@ -80,12 +80,12 @@
                       description = "Provides the list of events matching query parameters",
                       content = @Content(array = @ArraySchema(schema = @Schema(implementation = HttpModels.EventModel.class)))),
          @ApiResponse(responseCode = "400", description = "One of the query parameters has a bad value"),
--        @ApiResponse(responseCode = "500", description = serverErrorMessage)
-+logger.info("received request for events in namespace {}", namespace.replaceAll("[^a-zA-Z0-9 _-]", ""));
+         @ApiResponse(responseCode = "500", description = serverErrorMessage)
      })
      public Response getEvents(@Parameter(description = "Namespace identifier") @PathParam("namespace") final String namespace,
                                @BeanParam final GetEventsDataSourceBean bean) throws IOException {
-         logger.info("received request for events in namespace {}", namespace);
+-        logger.info("received request for events in namespace {}", namespace);
++        logger.info("received request for events in namespace {}", namespace.replaceAll("[^a-zA-Z0-9 _-]", ""));
          logger.debug("request parameters: {}", bean);
          final List<Event> results = this.cantor.events().get(
                  namespace,
