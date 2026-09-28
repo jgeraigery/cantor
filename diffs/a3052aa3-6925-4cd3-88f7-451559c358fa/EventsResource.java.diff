@@ -109,12 +109,12 @@
                       content = @Content(array = @ArraySchema(schema = @Schema(implementation = String.class)))),
          @ApiResponse(responseCode = "400", description = "One of the query parameters has a bad value"),
          @ApiResponse(responseCode = "500", description = serverErrorMessage)
--    })
-+logger.info("received request for metadata {} in namespace {}", metadata, namespace.replaceAll("[^a-zA-Z0-9 _-]", ""));
+     })
      public Response getMetadata(@Parameter(description = "Namespace identifier") @PathParam("namespace") final String namespace,
                                  @Parameter(description = "Specific metadata to search") @PathParam("metadata") final String metadata,
                                  @BeanParam final EventsDataSourceBean bean) throws IOException {
-         logger.info("received request for metadata {} in namespace {}", metadata, namespace);
+-        logger.info("received request for metadata {} in namespace {}", metadata, namespace);
++        logger.info("received request for metadata {} in namespace {}", metadata.replaceAll("[^a-zA-Z0-9 _-]", ""), namespace.replaceAll("[^a-zA-Z0-9 _-]", ""));
          logger.debug("request parameters: {}", bean);
          final Set<String> metadataValueSet = this.cantor.events().metadata(
                  namespace,
