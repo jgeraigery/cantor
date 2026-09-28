@@ -157,12 +157,12 @@
      @Path("/{namespace}")
      @Operation(summary = "Create an event namespace")
      @ApiResponses(value = {
--        @ApiResponse(responseCode = "200", description = "Event namespace was successfully created or already existed"),
-+logger.info("received request for creation of namespace {}", namespace.replaceAll("[^a-zA-Z0-9 _-]", ""));
+         @ApiResponse(responseCode = "200", description = "Event namespace was successfully created or already existed"),
          @ApiResponse(responseCode = "500", description = serverErrorMessage)
      })
      public Response createNamespace(@Parameter(description = "Namespace identifier") @PathParam("namespace") final String namespace) throws IOException {
-         logger.info("received request for creation of namespace {}", namespace);
+-        logger.info("received request for creation of namespace {}", namespace);
++        logger.info("received request for creation of namespace {}", namespace.replaceAll("[^a-zA-Z0-9 _-]", ""));
          this.cantor.events().create(namespace);
          return Response.ok().build();
      }
