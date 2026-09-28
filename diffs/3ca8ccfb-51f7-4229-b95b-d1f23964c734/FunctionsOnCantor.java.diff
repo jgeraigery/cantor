@@ -29,18 +29,18 @@
          this.cantor = cantor;
          initExecutors();
      }
+ 
+     @Override
+     public void create(final String namespace) throws IOException {
 +        // Define a whitelist of allowed namespaces, TODO: populate the list with the application namespaces
 +        Set<String> allowedNamespaces = new HashSet<>();
-+        allowedNamespaces.add("allowedNamespace1");
-+        allowedNamespaces.add("allowedNamespace2");
- 
++        allowedNamespaces.add("allowed-namespace-1");
++        allowedNamespaces.add("allowed-namespace-2");
++
 +        // Validate that the namespace is in the whitelist
 +        if (!allowedNamespaces.contains(namespace)) {
 +            throw new IOException("Invalid namespace.");
 +        }
-+
-     @Override
-     public void create(final String namespace) throws IOException {
          checkNamespace(namespace);
          doCreate(namespace);
      }
