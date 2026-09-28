@@ -172,12 +172,12 @@
      @Operation(summary = "Add list of events")
      @ApiResponses(value = {
              @ApiResponse(responseCode = "200", description = "Events were added. (All events are immutable and will not overwrite each other)"),
--            @ApiResponse(responseCode = "500", description = serverErrorMessage)
-+        logger.info("received request for json event upload in namespace {}", namespace.replaceAll("[^a-zA-Z0-9 _-]", ""));
+             @ApiResponse(responseCode = "500", description = serverErrorMessage)
      })
      public Response storeMultipleEvents(@Parameter(description = "Namespace identifier") @PathParam("namespace") final String namespace,
                                          final List<HttpModels.EventModel> jsonEvents) throws IOException {
-         logger.info("received request for json event upload in namespace {}", namespace);
+-        logger.info("received request for json event upload in namespace {}", namespace);
++        logger.info("received request for json event upload in namespace {}", namespace.replaceAll("[^a-zA-Z0-9 _-]", ""));
          logger.debug("received request event: {}", jsonEvents);
          final List<Event> events = jsonEvents.stream().map(HttpModels.EventModel::toCantorEvent).collect(Collectors.toList());
          this.cantor.events().store(namespace, events);
