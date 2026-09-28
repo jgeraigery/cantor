@@ -136,12 +136,12 @@
                      content = @Content(array = @ArraySchema(schema = @Schema(implementation = Event.class)))),
              @ApiResponse(responseCode = "400", description = "One of the query parameters has a bad value"),
              @ApiResponse(responseCode = "500", description = serverErrorMessage)
--    })
-+logger.info("received request for dimension {} in namespace {}", dimension, namespace.replaceAll("[^a-zA-Z0-9 _-]", ""));
+     })
      public Response getDimension(@Parameter(description = "Namespace identifier") @PathParam("namespace") final String namespace,
                                  @Parameter(description = "Specific dimension to have") @PathParam("dimension") final String dimension,
                                  @BeanParam final EventsDataSourceBean bean) throws IOException {
-         logger.info("received request for dimension {} in namespace {}", dimension, namespace);
+-        logger.info("received request for dimension {} in namespace {}", dimension, namespace);
++        logger.info("received request for dimension {} in namespace {}", dimension.replaceAll("[^a-zA-Z0-9 _-]", ""), namespace.replaceAll("[^a-zA-Z0-9 _-]", ""));
          logger.debug("request parameters: {}", bean);
          final List<Event> thinEvents = this.cantor.events().dimension(
                  namespace,
