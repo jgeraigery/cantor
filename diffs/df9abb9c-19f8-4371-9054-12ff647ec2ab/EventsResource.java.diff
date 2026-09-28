@@ -159,19 +159,19 @@
      @Operation(summary = "Create an event namespace")
      @ApiResponses(value = {
          @ApiResponse(responseCode = "200", description = "Event namespace was successfully created or already existed"),
-+    // Define a whitelist of allowed namespaces, TODO: populate the list with the application namespaces
-+    Set<String> allowedNamespaces = new HashSet<>();
-+    allowedNamespaces.add("exampleNamespace1");
-+    allowedNamespaces.add("exampleNamespace2");
-+
-+    // Validate that the namespace is in the whitelist
-+    if (!allowedNamespaces.contains(namespace)) {
-+        throw new IOException("Invalid namespace.");
-+    }
          @ApiResponse(responseCode = "500", description = serverErrorMessage)
      })
      public Response createNamespace(@Parameter(description = "Namespace identifier") @PathParam("namespace") final String namespace) throws IOException {
          logger.info("received request for creation of namespace {}", namespace);
++        // Define a whitelist of allowed namespaces, TODO: populate the list with the application namespaces
++        Set<String> allowedNamespaces = new HashSet<>();
++        allowedNamespaces.add("exampleNamespace1");
++        allowedNamespaces.add("exampleNamespace2");
++
++        // Validate that the namespace is in the whitelist
++        if (!allowedNamespaces.contains(namespace)) {
++            throw new IOException("Invalid namespace.");
++        }
          this.cantor.events().create(namespace);
          return Response.ok().build();
      }
